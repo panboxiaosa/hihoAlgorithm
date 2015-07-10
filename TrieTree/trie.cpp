@@ -36,6 +36,14 @@ private:
         }
         return NULL;
     }
+    void release(treeNode* root){
+        list<treeNode*>::iterator it = root->childs.begin();
+        while(it != root->childs.end()){
+            release(*it);
+            it++;
+        }
+        delete root;
+    }
 
 public:
     Trie(){
@@ -60,6 +68,10 @@ public:
                 return 0;
         }
         return current->contain;
+    }
+
+    ~Trie(){
+        release(root);
     }
 
 };
