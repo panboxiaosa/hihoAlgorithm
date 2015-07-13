@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1436789642 source:e:\github\hihoalgorithm\kmp\kmp.cpp
+	<iostream>
+	<vector>
+	<string>
+
