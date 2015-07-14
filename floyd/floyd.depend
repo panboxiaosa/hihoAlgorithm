@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1436864809 source:e:\github\hihoalgorithm\floyd\floyd.cpp
+	<iostream>
+	<vector>
+	<assert.h>
+
