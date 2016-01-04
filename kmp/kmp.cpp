@@ -1,46 +1,52 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <string.h>
 
 using namespace std;
 
-void getNext(const char* nStr, int* next, int len){
-    next[0] = -1;
-    for(int i = 1 ;i < len; i++){
-        next[i] = -1;
-        int k = next[i - 1];
-        while(true){
-            if(nStr[i] == nStr[k + 1]){
-                next[i] = k + 1;
-                break;
-            }
-            if(!k > -1)
-                break;
-            k = next[k];
-        }
+char pattern[10000];
+int next_array[10000];
+char target[1000000];
+int len;
+
+void getnext_array()
+{
+    next_array[0] = 0;
+    for(int i = 1; i < len; i++){
+        int pre = next_array[i - 1];
+        while(pattern[pre] != pattern[i] && pre > 0)
+            pre = next_array[pre - 1];
+        if(pattern[pre] == pattern[i])
+            next_array[i] = pre + 1;
     }
 }
 
-int occurs(string target, const char* nStr, int* next, int len){
+int findMatch()
+{
     int pos = 0;
-    int cursor = 0;
-    int total = 0;
-    while(pos < target.length()){
-        if(target.at(pos) == nStr[cursor] && cursor == len - 1){
-            total ++;
-            pos++;
-            cursor = next[cursor] + 1;
-        }
-        else if(target.at(pos) == nStr[cursor]){
-            pos++;
-            cursor++;
+    int index = 0;
+    int occur = 0;
+
+    int itc = 0;
+    int tar_len = strlen(target);
+    while(index < tar_len){
+        if(target[index] == pattern[pos]){
+            if(pos == len - 1){
+                occur++;
+                pos = next_array[pos];
+            }else{
+                pos++;
+                index++;
+            }
         }else{
-            pos++;
-            if(cursor != 0)
-                cursor = next[cursor - 1] + 1;
+            if(pos == 0)
+                index++;
+            else
+                pos = next_array[pos - 1];
         }
     }
-    return total;
+    return occur;
 }
 
 int main()
@@ -49,15 +55,12 @@ int main()
     cin>>tests;
     vector<int> times;
     for(int i = 0; i < tests; i++){
-        string one;
-        cin>>one;
-        int len = one.length();
-        int* next = new int[len];
-        string target;
+        cin>>pattern;
         cin>>target;
-        getNext(one.c_str(), next, len);
-        times.push_back(occurs(target, one.c_str(), next, one.length()));
-        delete next;
+        len = strlen(pattern);
+        getnext_array();
+        int result = findMatch();
+        times.push_back(result);
     }
 
     for(int i = 0; i < tests; i++){
