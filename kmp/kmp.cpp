@@ -53,18 +53,13 @@ int main()
 {
     int tests;
     cin>>tests;
-    vector<int> times;
     for(int i = 0; i < tests; i++){
         cin>>pattern;
         cin>>target;
         len = strlen(pattern);
         getnext_array();
         int result = findMatch();
-        times.push_back(result);
-    }
-
-    for(int i = 0; i < tests; i++){
-        cout<<times.at(i)<<endl;
+        cout<<result<<endl;
     }
     return 0;
 }
