@@ -5,98 +5,49 @@
 
 using namespace std;
 
-char pattern[10001];
-int next_array[10001];
-char target[1000001];
-int len;
-
-void GetNext()
+void getNext(string patternStr, int* next)
 {
-    int i=0;
-    int j=-1;
-    next_array[i]=j;
-    while(i<len)
-    {
-        if(j==-1||pattern[i]==pattern[j])
-        {
-            i++;
-            j++;
-            if(i==len||pattern[i]!=pattern[j])//不允许出现P[i]==P[next[i]]
-                next_array[i]=j;
-            else
-                next_array[i]=next_array[j];
-        }
-        else
-        {
-            j=next_array[j];
-        }
-    }
-
-}
-
-void getnext_array()
-{
-    next_array[0] = 0;
+    int len = patternStr.length();
+    const char* pattern = patternStr.c_str();
+    next[0] = 0;
     for(int i = 1; i < len; i++){
-        int pre = next_array[i - 1];
-        while(pattern[pre] != pattern[i] && pre > 0)
-            pre = next_array[pre - 1];
-        if(pattern[pre] == pattern[i])
-            next_array[i] = pre + 1;
+        int comp = next[i - 1];
+        while(comp > 0 && pattern[i] != pattern[comp])
+            comp = next[comp - 1];
+        if(pattern[comp] == pattern[i])
+            next[i] = comp + 1;
+        else
+            next[i] = 0;
     }
+
 }
 
-int findMatch()
+int findMatch(string pattern, string target, int* next)
 {
-    int pos = 0;
+    int total = 0;
+    int len = pattern.length();
+    const char* p = pattern.c_str();
+    const char* tar = target.c_str();
     int index = 0;
-    int occur = 0;
-
-    int itc = 0;
-    int tar_len = strlen(target);
-    while(index < tar_len){
-        if(target[index] == pattern[pos]){
-            if(pos == len - 1){
-                occur++;
-                pos = next_array[pos];
-            }else{
+    int pos = 0;
+    int all_len = target.length();
+    while(index < all_len){
+        if(p[pos] == tar[index]){
+            if(pos == len - 1)
+                total++, pos = next[pos];
+            else
                 pos++;
-                index++;
-            }
+            index++;
+
         }else{
             if(pos == 0)
                 index++;
             else
-                pos = next_array[pos - 1];
+                pos = next[pos - 1];
         }
     }
-    return occur;
-}
 
-int KMPSearch()
-{
-    int Plen = len;
-    int Slen = strlen(target);
-
-    unsigned int i=0;//在S串中的下标
-    unsigned int j=0;//在P串中的下标
-	unsigned int count=0;//匹配串出现的次数
-    while(i<Slen)
-    {
-        if(j==-1||target[i]==pattern[j])
-        {
-            i++;
-            j++;
-        }
-        else  if(j<Plen)
-            j=next_array[j];
-		if(j==Plen)
-		{
-			count++;
-			j=next_array[Plen];
-		}
-    }
-    return count;
+    return total;
 }
 
 int main()
@@ -104,11 +55,14 @@ int main()
     int tests;
     cin>>tests;
     for(int i = 0; i < tests; i++){
+        string pattern;
+        string target;
         cin>>pattern;
         cin>>target;
-        len = strlen(pattern);
-        getnext_array();
-        int result = findMatch();
+        int* next = new int[pattern.length()];
+        getNext(pattern, next);
+        int result = findMatch(pattern, target, next);
+        delete[] next;
         cout<<result<<endl;
     }
     return 0;
