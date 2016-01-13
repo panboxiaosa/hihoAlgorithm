@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1452681305 source:d:\github\hihoalgorithm\numtriangle\main.cpp
+	<iostream>
+	<queue>
+	"../util/array2D.hpp"
+
+1452655298 d:\github\hihoalgorithm\util\array2d.hpp
+	<iostream>
+	<assert.h>
+
