@@ -5,17 +5,33 @@
 using namespace std;
 
 template<typename T>
-typedef struct TreeNode{
+struct TreeNode{
     TreeNode* parent;
     TreeNode* leftChild;
     TreeNode* rightChild;
     T data;
-} BinTreeNode;
+};
+
 
 template<typename T>
 class BinTree{
 private:
-    TreeNode<T> root;
+    TreeNode<T>* root;
+
+public:
+    BinTree(){
+        root = 0;
+    }
+
+    ~BinTree(){
+        release(root);
+    }
+
+    void addNode(const T& value){
+        TreeNode<T>* node = new TreeNode<T>();
+        node->data = T;
+
+    }
 
 };
 

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1452828647 source:d:\github\hihoalgorithm\test\main.cpp
+	<iostream>
+	<algorithm>
+	<string>
+

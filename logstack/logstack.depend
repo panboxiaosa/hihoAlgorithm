@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1452782433 source:d:\github\hihoalgorithm\logstack\main.cpp
+	<iostream>
+	<stack>
+	<string>
+	<vector>
+	<map>
+
