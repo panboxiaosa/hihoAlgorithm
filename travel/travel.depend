@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1455774266 source:d:\github\hihoalgorithm\travel\main.cpp
+	<iostream>
+	<bitset>
+	<vector>
+	<stack>
+
