@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1455867563 source:d:\github\hihoalgorithm\statecomp\main.cpp
+	<iostream>
+	<vector>
+	<memory.h>
+
