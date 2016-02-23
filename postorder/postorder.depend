@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1456110659 source:d:\github\hihoalgorithm\postorder\main.cpp
+	<iostream>
+	<string>
+	<stack>
+

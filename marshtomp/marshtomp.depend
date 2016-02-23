@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1456217119 source:d:\github\hihoalgorithm\marshtomp\main.cpp
+	<iostream>
+	<string>
+	<cmath>
+	<string.h>
+	<stdio.h>
+

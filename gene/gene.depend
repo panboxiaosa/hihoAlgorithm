@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1456137267 source:d:\github\hihoalgorithm\gene\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	<memory.h>
+
