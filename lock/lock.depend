@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1456367007 source:d:\github\hihoalgorithm\lock\main.cpp
+	<iostream>
+	<vector>
+	<set>
+	<map>
+	<memory.h>
+	<list>
+

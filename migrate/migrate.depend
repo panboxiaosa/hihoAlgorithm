@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1456301027 source:d:\github\hihoalgorithm\migrate\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+
