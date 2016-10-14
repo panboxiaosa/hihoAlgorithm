@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../util/tinyarray.hpp"
 
 using namespace std;
 
@@ -25,32 +26,18 @@ void rotate(int w, int h){
 
 int main(){
 
-    int m,n;
-    cin>>m>>n;
-    for(int i = 0; i < n; i++)
-        for(int j = 0; j < m; j++)
-            cin>>matrix[i][j];
-
-    for(int i = 0; i < 3; i++)
-        for(int j = 0; j < 3; j++)
-            cin>>target[i][j];
-
-
-    for(int i = 0; i < 4; i++){
-        rotate(m ,n);
-        swap(m, n);
-        for(int y = 1; y < n - 1; y++){
-            for(int x = 1; x < m - 1; x++){
-                bool result = true;
-                for(int i = 0; i < 3; i++)
-                    for(int j = 0; j < 3; j++)
-                        if(matrix[y + i - 1][x + j- 1] != target[i][j])
-                            result = false;
-                if(result)
-                    cout<<x + 1<<" "<<y + 1<<endl;
-            }
-        }
-    }
-
+    Tinyarray<int> item;
+    int num1 = 0;
+    int num2 = 2;
+    item.offer(num1);
+    item.print();
+    item.offer(num2);
+    item.print();
+    item.drop();
+    item.print();
+    cout <<item[0]<<endl;
+    cout <<"==="<<endl;
+    item.reset();
+    item.print();
     return 0;
 }
