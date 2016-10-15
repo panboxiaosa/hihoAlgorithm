@@ -2,48 +2,23 @@
 #include <limits>
 #include <string>
 #include <vector>
+#include "../util/tinyarray.hpp"
 
 using namespace std;
-bool valid[100001];
 
 int main(){
-
-    int a;
-    cin>>a;
-
-    for (int i = 0 ;i <= 100000; i++){
-        int temp = i;
-        int bin = 0;
-        int ten = 0;
-        while(temp > 0){
-            bin += temp & 1;
-            temp >>= 1;
-        }
-        temp = i;
-        while(temp > 0){
-            temp += temp % 10;
-            temp /= 10;
-        }
-        if (bin == ten){
-            valid[i] = true;
-        }else{
-            valid[i] = false;
-        }
-    }
-    vector<int> result;
-    result[0] = 1;
-    for (int i = 1; i <= 100000; i++)
-    {
-        if (valid[i])
-        {
-            result[i] = result[i-1] + 1;
-        }
-    }
-    int b;
-    for (int i = 0; i < a; i++)
-    {
-        cin>> b;
-        cout<<result[b]<<endl;
-    }
+    Tinyarray<int> item;
+    int num1 = 0;
+    int num2 = 2;
+    item.offer(num1);
+    item.print();
+    item.offer(num2);
+    item.print();
+    item.drop();
+    item.print();
+    cout <<item[0]<<endl;
+    cout <<"==="<<endl;
+    item.reset();
+    item.print();
     return 0;
 }
