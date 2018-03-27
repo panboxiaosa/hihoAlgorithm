@@ -7,7 +7,8 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+  
+  <button bindtap='clickSeller'>我是商家</button>
+  
+  <button bindtap='clickConsumer'>我是顾客</button>
 </view>
