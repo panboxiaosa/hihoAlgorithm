@@ -1,4 +1,12 @@
-spring.application.name=compute-service  
-server.port=8762
-#ע�����ĵ�ַ
-eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+eureka:
+  client:
+    serviceUrl:
+      #注册中心的地址
+      defaultZone: http://localhost:8761/eureka/
+server:
+  #当前服务端口号
+  port: 8762
+spring:
+  application:
+    #当前应用名称
+    name: service-hi
