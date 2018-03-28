@@ -3,8 +3,17 @@
 const app = getApp()
 
 Page({
+  clickConsumer : function(event){
+    wx.redirectTo({
+      url: '../dish/dish',
+    });
+  },
+  clickSeller : function(event) {
+    wx.redirectTo({
+      url: '../table/table',
+    });
+  },
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')

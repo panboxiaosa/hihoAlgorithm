@@ -1,0 +1,15 @@
+<!--pages/dish/dish.wxml-->
+<text>all dishes</text>
+
+<scroll-view scroll-y style='height: 100%;'>
+  <view><text>im dish</text></view>
+  <view><text>im dish</text></view>
+  <view><text>im dish</text></view>
+  <view><text>im dish</text></view>
+  <view><text>im dish</text></view>
+  <view><text>im dish</text></view>
+  <view><text>im dish</text></view>
+  <view><text>im dish</text></view>
+  <view><text>im dish</text></view>
+  <view><text>im dish</text></view>
+</scroll-view>

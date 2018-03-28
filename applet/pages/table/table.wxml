@@ -1,0 +1,33 @@
+<!--pages/table/table.wxml-->
+<text>上传图片</text>
+
+<text>my tables</text>
+<button bindtap='clickDiscount'>我的优惠券</button>
+<button bindtap='clickProduct'>我的产品</button>
+
+<form bindsubmit='createSubmit'>
+  <text>几张桌子</text>
+  <input type='number'></input>
+ 
+  <button form-type='submit'>创建桌上二维码</button>
+</form>
+
+<scroll-view scroll-y style='height: 100%;'>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  <view><text>im table</text></view>
+  
+ 
+</scroll-view>
