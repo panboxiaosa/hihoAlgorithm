@@ -11,6 +11,11 @@
     <modules>
         <module>server1</module>
         <module>discovery</module>
+        <module>shop</module>
+        <module>table</module>
+        <module>commodity</module>
+        <module>discont</module>
+        <module>order</module>
     </modules>
 
     <parent>
