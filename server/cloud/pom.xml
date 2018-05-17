@@ -9,13 +9,13 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>discovery</module>
-        <module>shop</module>
-        <module>table</module>
-        <module>dish</module>
-        <module>discont</module>
-        <module>order</module>
-        <module>gateway</module>
+        <module>deploy/discovery</module>
+        <module>deploy/gateway</module>
+        <module>provider/shop</module>
+        <module>provider/table</module>
+        <module>provider/dish</module>
+        <module>provider/discont</module>
+        <module>provider/order</module>
     </modules>
 
     <parent>
