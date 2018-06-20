@@ -5,19 +5,13 @@ eureka:
       defaultZone: http://hereprovides.com:8761/eureka/
 server:
   #当前服务端口号
-  port: 8765
+  port: 8770
 spring:
   application:
     #当前应用名称
-    name: service-order
+    name: service-user
   rabbitmq:
     host: hereprovides.com
     port: 5672
     username: admin
     password: admin
-  cloud:
-    stream:
-      bindings:
-        output:
-          destination: mqTableMessage
-          contentType: text/plain

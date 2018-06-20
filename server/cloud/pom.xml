@@ -16,6 +16,10 @@
         <module>provider/dish</module>
         <module>provider/discont</module>
         <module>provider/order</module>
+        <module>viewmodel/dishdata</module>
+        <module>user</module>
+        <module>consumer/owner</module>
+        <module>apidata</module>
     </modules>
 
     <parent>
